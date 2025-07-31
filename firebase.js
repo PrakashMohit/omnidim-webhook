@@ -2,10 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const admin = require("firebase-admin");
 
-// This must match the filename in Render's Secret File tab
+// 👇 Make sure this matches the Secret File name in Render
 const keyPath = path.join(__dirname, "firebaseServiceAccountKey.json");
 
-// Read the JSON file contents
+// 👇 This reads the file contents as a string, then parses it to JSON
 const serviceAccount = JSON.parse(fs.readFileSync(keyPath, "utf8"));
 
 admin.initializeApp({
